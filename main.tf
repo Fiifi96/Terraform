@@ -12,8 +12,8 @@ terraform {
 provider "aws" {
   profile = "default"
   region  = "us-east-2"
-  access_key = "AKIA2T7WVBKXXKFDHOIL"
-  secret_key = "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"
+  access_key = "AKIAIOSFODNN7EXAMPLE"
+  secret_key = "+N"
 }
 
 # 1. Create a new VPC
@@ -130,7 +130,11 @@ resource "aws_eip" "one" {
   vpc                       = true
   network_interface         = aws_network_interface.test-nic.id
   associate_with_private_ip = "10.0.1.50"
-  
+  depends_on = [aws_internet_gateway.gw]
+    
+  tags = {
+    Name = "one_eip"
+  }
 }
 
 #9. Create a Amazon Linux 2 server
