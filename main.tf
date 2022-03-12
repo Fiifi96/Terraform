@@ -175,8 +175,8 @@ resource "aws_instance" "web-test" {
 # provider "aws" {
 #   profile = "default"
 #   region  = "us-east-2"
-#   access_key = "AKIA2T7WVBKXXKFDHOIL"
-#   secret_key = "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"
+#   access_key = "AKIAIOSFODNN7EXAMPLE"
+#   secret_key = "+NQ"
 # }
 
 # resource "aws_vpc" "test-vpc" {
